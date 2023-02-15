@@ -1,14 +1,5 @@
-from datetime import datetime
-from enum import Enum
-from typing import List, Optional, Union
-
-from fastapi_users import fastapi_users, FastAPIUsers
-from pydantic import BaseModel, Field
-
-from fastapi import FastAPI, Request, status, Depends
-from fastapi.encoders import jsonable_encoder
-from fastapi.exceptions import ValidationError
-from fastapi.responses import JSONResponse
+from fastapi import FastAPI, Depends
+from fastapi_users import FastAPIUsers
 
 from auth.auth import auth_backend
 from auth.database import User
