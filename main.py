@@ -6,7 +6,7 @@ from auth.database import User
 from auth.manager import get_user_manager
 from auth.schemas import UserRead, UserCreate
 
-app = FastAPI(
+app: FastAPI = FastAPI(
     title="Klik Blik"
 )
 
@@ -29,9 +29,11 @@ app.include_router(
 
 current_user = fastapi_users.current_user()
 
+
 @app.get("/protected-route")
 def protected_route(user: User = Depends(current_user)):
     return f"Hello, {user.username}"
+
 
 @app.get("/unprotected-route")
 def unprotected_route():
