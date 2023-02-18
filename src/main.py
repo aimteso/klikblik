@@ -3,8 +3,10 @@ from fastapi import FastAPI
 from auth.base_config import auth_backend, fastapi_users
 from auth.schemas import UserRead, UserCreate
 
+from item.router import router as router_operation
+
 app = FastAPI(
-    title="Klik Blik"
+    title="Trading App"
 )
 
 app.include_router(
@@ -18,3 +20,5 @@ app.include_router(
     prefix="/auth",
     tags=["Auth"],
 )
+
+app.include_router(router_operation)
