@@ -1,6 +1,7 @@
-alembic
-fastapi[all]
+alembic==1.9.4
+fastapi[all]~=0.92.0
 fastapi-users[sqlalchemy]
 psycopg2
-python-dotenv
-sqlalchemy
+python-dotenv~=0.21.1
+sqlalchemy==2.0.4
+auth~=0.5.3
